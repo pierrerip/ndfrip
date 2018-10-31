@@ -1,0 +1,25 @@
+<p>
+  <div style="text-align:center">
+    <div class="ui search">
+      <div class="ui icon input">
+        <input #searchBox placeholder="Rechercher une note de frais" (keyup)="search(searchBox.value)" class="prompt">
+        <i class="search icon"></i>
+      </div>
+    </div>
+  </div>
+  <div class="ui container segment">
+    <div class="ui link stackable three cards">
+      <div routerLink="/detail/{{ndf._id}}" *ngFor="let ndf of ndfs$ | async" class="ui fluid card">
+        <div class="content">
+          <div class="header">
+            {{ndf.nom}}
+          </div>
+        </div>
+        <div class="extra content">
+          <div class="ui two buttons">
+            <div routerLink="/detail/{{ndf._id}}" class="ui primary basic button">Afficher</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

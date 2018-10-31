@@ -1,0 +1,41 @@
+<form>
+  <div> Créer une nouvelle note de frais</div>
+  <div class="form-group">
+    <label for='name'>Intitulé de la note de frais</label>
+    <input type="text" name='intitule' class="form-control" required placeholder="Garagiste">
+  </div>
+
+  <div class="form-group">
+    <label for='responsable'>Responsable de la note de frais</label>
+    <input type="text" name='responsable' class="form-control" required placeholder="Jean Dupont">
+  </div>
+
+  <div class="form-group">
+    <label for='commentaire'>Commentaire</label>
+    <input type="text" name='commentaire' class="form-control" required placeholder="Commentaire">
+  </div>
+
+  <div>
+    <input type="date" name="date">
+  </div>
+
+  <div class="form-group">
+    <label for='Montant'>Montant de la transaction</label>
+    <input type="text" name='montant' class="form-control" required placeholder="1000">
+  </div>
+
+  <div class="form-group">
+    <label> Pays d'origine</label>
+    <select required class="form-control" name='devise'>
+      <option value="$"> $ <option>
+      <option value="£"> £ <option>
+      <option value="€"> € <option>
+      <option value="yen"> yen <option>
+    </select>
+  </div>
+  <div>
+    <buttom color="accent" routerLink='/list'>Retour</buttom>
+    <button type="submit" (click)="addIssue(intitule.value, responsible.value, intitule.value, montant.value, devise.value, date.value, commentaire.value)"
+      [disabled="createForm.pristine || createForm.invalid" color="primary" ]>Sauvegarder</button>
+  </div>
+</form>

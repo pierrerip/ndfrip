@@ -1,0 +1,13 @@
+<p>
+  <div class="ui container segment">
+    <div *ngIf="ndf">
+      <div class="ui huge form">
+        <div class="field">
+          <input [(ngModel)]="ndf.nom">
+        </div>
+      </div>
+      <br>
+      <div class="ui primary button" (click)="save()">Modifier</div>
+      <div class="ui secondary button" (click)="delete(ndf)">Supprimer</div>
+    </div>
+  </div>
